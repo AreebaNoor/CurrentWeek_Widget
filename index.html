@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Current Week Widget</title>
+    <style>
+        @font-face {
+            font-family: Garges;
+            src: url(./Media/Garges.ttf);
+        }
+        #mainP {
+            font-family: Garges;
+            font-size: 26px;
+            margin: 10px;
+        }
+        div {
+            padding: 5px;
+            background-color: #f3f1f1;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p id="mainP">Uke: </p>
+    </div>
+    <script>
+        const MainPEl = document.getElementById("mainP");
+
+        currentDate = new Date();
+        startDate = new Date(currentDate.getFullYear(), 0, 1);
+        let days = Math.floor((currentDate - startDate)/(24 * 60 * 60 * 1000));
+         
+        let weekNumber = Math.ceil(days / 7);
+        MainPEl.innerHTML += weekNumber;
+    </script>
+    
+</body>
+</html>
